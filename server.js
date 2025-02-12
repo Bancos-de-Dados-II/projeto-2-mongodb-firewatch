@@ -259,8 +259,19 @@ app.post('/incendios', async (req, res) => {
   // Listar todos os incêndios
 app.get('/api/incendios', async (req, res) => {
     try {
-        const incendios = await Incendio.find({})
-        .select('id cidade rua descricao gravidade data_registro');
+        const incendios = await Incendio.find({},{
+            _id: 1, // Equivalente ao campo 'id' no SQL
+            cidade: 1,
+            rua: 1,
+            descricao: 1,
+            gravidade: 1,
+            data_registro: 1,
+            nome: 1,
+            cpf: 1,
+            longitude: { $arrayElemAt: ["$localizacao.coordinates", 0] }, // Extrai a longitude
+            latitude: { $arrayElemAt: ["$localizacao.coordinates", 1] }   // Extrai a latitude
+          })
+        .select(' cidade rua descricao gravidade data_registro');
         res.status(200).json(incendios);
     } catch (error) {
         console.error('Erro ao listar incêndios:', error);
