@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import { Schema } from 'mongoose';
 import {randomUUID} from "crypto";
 import bodyParser from 'body-parser';
+import cors from 'cors'
 
 
 
@@ -12,7 +13,7 @@ import bodyParser from 'body-parser';
 conectar();
 
 async function conectar(){
-    await mongoose.connect(process.env.MONGO_URL).
+    await mongoose.connect('mongodb+srv://evangelistaalexandre:cascavel40@cluster0.mmfh0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'||process.env.MONGO_URL).
         then(()=> console.log("Conectado ao MongoDB")).
         catch(err => console.log(err));
 }
@@ -74,6 +75,7 @@ const Incendio =mongoose.model('Incendio',incendioSchema);
 const app = express();
 app.use(bodyParser.json());
 app.use(express.static('public')); // Servir arquivos estáticos
+app.use(cors());
 
 
 
@@ -272,7 +274,7 @@ app.get('/api/incendios/:id', async (req, res) => {
     const id = req.params.id;
 
     try {
-        const incendios = await Incendio.find({_id:id}).select('id cidade rua descricao gravidade data_registro nome cpf');
+        const incendios = await Incendio.findOne({_id:id}).select('id cidade rua descricao gravidade data_registro nome cpf');
         
         res.status(200).json(incendios);
     } catch (error) {

@@ -26,8 +26,9 @@ async function carregarIncendiosDoUsuario() {
                 <p><strong>Data:</strong> ${new Date(incendio.data_registro).toLocaleString()}</p>
                 <p><strong>Gravidade:</strong> ${incendio.gravidade}</p>
                 <div class="actions">
-                    <button class="btn-detalhes" onclick="verDetalhes(${incendio.id})" title="Ver Detalhes">🔍</button>
-                    <button class="btn-editar" onclick="editarIncendio(${incendio.id})" title="Editar Incêndio">✏️</button>
+                    <button class="btn-detalhes" onclick="verDetalhes('${incendio._id}')" title="Ver Detalhes">🔍</button>
+                    <button class="btn-editar" onclick="editarIncendio('${incendio._id}')" title="Editar Incêndio">✏️</button>
+        
                 </div>
             `;
 
@@ -42,7 +43,7 @@ async function verDetalhes(id) {
     try {
         const resposta = await fetch(`/api/incendios/${id}`);
         const incendio = await resposta.json();
-
+        console.log('Dados do incêndio:', incendio);
         // Exibir informações detalhadas
         alert(`
             Nome: ${incendio.nome}
