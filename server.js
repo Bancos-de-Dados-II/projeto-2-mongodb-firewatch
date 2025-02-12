@@ -13,7 +13,7 @@ import cors from 'cors'
 conectar();
 
 async function conectar(){
-    await mongoose.connect('mongodb+srv://evangelistaalexandre:cascavel40@cluster0.mmfh0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'||process.env.MONGO_URL).
+    await mongoose.connect(''||process.env.MONGO_URL).
         then(()=> console.log("Conectado ao MongoDB")).
         catch(err => console.log(err));
 }
