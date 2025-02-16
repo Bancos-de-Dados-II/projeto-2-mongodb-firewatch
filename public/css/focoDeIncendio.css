@@ -51,7 +51,7 @@ h1 {
 
 .actions {
     display: flex;
-    justify-content: space-around;
+    justify-content: end;
     margin-top: 10px;
 }
 
@@ -62,6 +62,7 @@ button {
     color: #fff;
     padding: 10px;
     cursor: pointer;
+    margin: 5px;
 }
 
 button:hover {

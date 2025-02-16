@@ -32,10 +32,10 @@ h1 {
 }
 
 #map {
-    height: 70vh; /* Altura do mapa */
+    height: 60vh;
     margin: 20px auto;
     border-radius: 10px;
-    width: 90%;
+    width: 75%;
     max-width: 800px;
 }
 
@@ -56,4 +56,23 @@ button {
 
 button:hover {
     background-color: #d14327;
+}
+
+@media (max-width:800px){
+    #map{
+        width: 95%;
+        height: 65vh;
+
+    }
+    button{
+        margin: 0;
+        padding: 10px;
+    }
+    .buttons{
+        margin: 0;
+    }
+    
+    #imgCabecario {
+        height: 35px;
+    }
 }

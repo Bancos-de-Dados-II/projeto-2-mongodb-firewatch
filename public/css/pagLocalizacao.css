@@ -37,8 +37,14 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-   
+    justify-content: center;
+    background-color: rgb(217, 213, 213);
+    border-radius: 5%;
+    padding: 10px;
+
+}
+.container{
+    display: flex;
 }
 input{
     border: none;
@@ -52,8 +58,10 @@ input{
 
 
 }
-#map { height: 600px;
-    max-width: 800px;
+#map {
+
+    height: 520px;
+    width: 100%;
     margin: auto;
 border-radius: 5%;
  
@@ -77,8 +85,11 @@ border-radius: 5%;
     
 }
 @media(max-width:768px) {
+    .container{
+        display: block;
+    }
     #imgCabecario{
-        height: 40px;
+        height: 30px;
         
       }
     h1{
@@ -86,7 +97,7 @@ border-radius: 5%;
     }
     #map{
         width: 100%;
-        height: 530px;
+
     }
     #searchButton{
 
@@ -103,6 +114,9 @@ border-radius: 5%;
 @media (max-width:800px){
     #map{
         width: 95%;
-        height: 570px;
+        height: 300px;
+    }
+    #itens{
+        padding: 0;
     }
 }
