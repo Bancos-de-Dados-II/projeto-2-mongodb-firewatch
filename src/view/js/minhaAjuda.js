@@ -63,7 +63,7 @@ function editarIncendio(id) {
 }
 
 async function excluirIncendio(id) {
-    const confirmacao = confirm('Deseja realmente excluir este incêndio?');
+    const confirmacao = confirm('Deseja realmente editar informações deste incêndio?');
     if (confirmacao) {
         try {
             await fetch(`/api/incendios/${id}`, { method: 'DELETE' });
