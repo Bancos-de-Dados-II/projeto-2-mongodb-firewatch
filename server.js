@@ -13,10 +13,7 @@ conectar();
 
 async function conectar() {
     try {
-        await mongoose.connect(process.env.MONGO_URL, {
-            useNewUrlParser: true, // garante que o mongoose use o formato correto de URL para conexão
-            useUnifiedTopology: true //ativa a nova engine para monitoramento do servidor
-        });
+        await mongoose.connect(process.env.MONGO_URL);
 
         console.log("Conectado ao MongoDB");
     } catch (err) {

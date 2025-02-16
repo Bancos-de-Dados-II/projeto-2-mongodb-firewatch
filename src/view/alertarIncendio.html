@@ -20,6 +20,11 @@
             <img id="logo" src="./img/image.png" alt="CBMPB">
             <h1>Alertar Incêndio</h1>
             <form id="alertForm">
+                <label for="localizacao">Localização</label>
+                <input type="text" id="localizacao" name="localizacao" readonly>
+                <div class="botoes">
+                <button type="button" id="localizacaoBtn" onclick="abrirLocalizacao()">Definir Localização</button>
+            </div>
                 <label for="gravidade">Gravidade</label>
                 <select id="gravidade" name="gravidade" required>
                     <option value="">Selecione</option>
@@ -28,10 +33,10 @@
                 </select>
                 <label for="descricao">Descrição</label>
                 <textarea id="descricao" name="descricao" placeholder="Descreva o incêndio..." required></textarea>
-                <label for="localizacao">Localização</label>
-                <input type="text" id="localizacao" name="localizacao" readonly>
-                <div id="botoes">
-                    <button type="button" id="localizacaoBtn" onclick="abrirLocalizacao()">Definir Localização</button>
+                
+                
+                <div class="botoes">
+                    
                     <button type="submit">Enviar Alerta</button>
                    
                 </div>

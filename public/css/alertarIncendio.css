@@ -54,12 +54,12 @@ select,textarea,input{
     color: #8b8888;
 
 }
-#botoes{
+.botoes{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#botoes> button{
+.botoes> button{
    
     background-color: #ef4f30;
     color: #ECECEC;
@@ -76,7 +76,7 @@ select,textarea,input{
         height: 120px;
     }
     
-    #botoes>button{
+    .botoes>button{
 
         width: 120px;
         font-size: 12px;
