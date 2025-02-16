@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 botaoLogout = document.querySelector("#logout")
-botaoLogout.addEventListener("click",()=> logout())
+botaoLogout.addEventListener("click",()=> logout()) 
 
 function logout() {
     sessionStorage.setItem('isLoggedIn', false);

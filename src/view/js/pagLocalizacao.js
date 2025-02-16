@@ -9,7 +9,7 @@
 
         // Declarar variáveis globais
         var map;
-        var marker;
+        var marker, fireMarker;
         let latitudeMarker, longitudemarker
 
         function success(pos) {
@@ -26,18 +26,25 @@
                 }).addTo(map);
 
                 // Cria o marcador inicial com o ícone personalizado
-                marker = L.marker([latitude, longitude], { icon: fireIcon }).addTo(map)
+                marker = L.marker([latitude, longitude]).addTo(map)
                     .bindPopup('Você está aqui!')
                     .openPopup();
-
+                fireMarker = null
                 map.on('click', e => {
-                    marker.setLatLng(e.latlng);
                     latitudeMarker = e.latlng.lat; //pegando a localização do click
                     longitudemarker = e.latlng.lng;
+                    
+                    if(!fireMarker){
+                        fireMarker = L.marker([latitudeMarker, longitudemarker],{ icon: fireIcon }).addTo(map)
+                        .bindPopup('incendio!')
+                        .openPopup();
+                    }
+                    else{
+                        fireMarker.setLatLng(e.latlng)
+                    }
                 });
 
                 document.getElementById('searchButton').addEventListener('click', () => { //buscar a localizção dos inputs no mapaa
-                    console.log(longitudemarker, latitudeMarker)
                     let lugar = document.getElementById('cidade').value + " " + document.getElementById('rua').value
                     console.log(lugar)
                     fetch(`https://nominatim.openstreetmap.org/search?q=${lugar}&format=json`)

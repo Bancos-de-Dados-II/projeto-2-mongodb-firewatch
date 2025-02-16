@@ -137,7 +137,7 @@ async function submitCadastro() {
 
         if (response.ok) {
             alert('Usuário cadastrado com sucesso!');
-            window.location.replace('http://localhost:3000/home.html');
+            window.location.replace('http://localhost:3000/login.html');
         } else {
             const errorData = await response.json();
             alert(errorData.message || 'Erro ao cadastrar usuário.');
