@@ -1,0 +1,78 @@
+/* Estilo para a página home */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F2DFDF;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    text-align: center;
+}
+#cabecario{
+    background-color: #0E0F26;
+    display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10px; 
+
+}
+#cabecario>div>a{
+    color: #ECECEC;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    margin: 5px;
+}
+#imgCabecario{
+    height: 55px;
+  }
+
+h1 {
+    margin: 20px 0;
+    color: #ef4f30;
+}
+
+#map {
+    height: 60vh;
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 75%;
+    max-width: 800px;
+}
+
+.buttons {
+    margin: 20px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ef4f30;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d14327;
+}
+
+@media (max-width:800px){
+    #map{
+        width: 95%;
+        height: 65vh;
+
+    }
+    button{
+        margin: 0;
+        padding: 10px;
+    }
+    .buttons{
+        margin: 0;
+    }
+    
+    #imgCabecario {
+        height: 35px;
+    }
+}

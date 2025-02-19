@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FireWatch - Home</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="shortcut icon" href="./img/favicon_io/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div id="cabecario">
+        <img id="imgCabecario" src="./img/cbmpb.png" alt="cbmpb">
+        <div>
+        <a href="http://localhost:3000/minhaAjuda.html">Minha Ajuda</a>
+        <a  id="logout" >Sair</a>
+        </div>
+    </div>
+    <h1>Mapa de Incêndios</h1>
+    <div id="map"></div>
+
+    <div class="buttons">
+        <button onclick="logout()">Sair</button>
+        <button onclick="window.location.href='alertarIncendio.html'">Alertar Incêndio</button>
+        <button onclick="window.location.href='focoDeIncendio.html'">Focos de Incêndio</button>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./js/home.js"></script>
+</body>
+
+</html>
